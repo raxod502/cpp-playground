@@ -12,7 +12,7 @@ public:
   {
   private:
     // The containing Vector.
-    const Vector<T> *m_vector;
+    Vector<T> *m_vector;
 
     // The current index of the iterator.
     size_t m_idx;
@@ -29,7 +29,7 @@ public:
     iterator() = delete;
 
     iterator(
-      const Vector<T> *vector, size_t idx, bool beforeBegin, bool isReverse)
+      Vector<T> *vector, size_t idx, bool beforeBegin, bool isReverse)
       : m_vector(vector), m_idx(idx), m_beforeBegin(beforeBegin),
         m_isReverse(isReverse)
     {
@@ -284,13 +284,12 @@ public:
     return m_arr[m_size - 1];
   }
 
-  // FIXME: this 'const' seems very suspect -- why is it allowed?
-  iterator begin() const
+  iterator begin()
   {
     return iterator(this, 0, false, false);
   }
 
-  iterator end() const
+  iterator end()
   {
     return iterator(this, m_size, false, false);
   }
