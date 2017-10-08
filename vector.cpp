@@ -435,8 +435,8 @@ int main()
     v.push_back(i);
   }
 
-  for (auto it = v.begin(); it != v.end(); ++it)
+  for (int i : v)
   {
-    std::cout << *it << std::endl;
+    std::cout << i << std::endl;
   }
 }
