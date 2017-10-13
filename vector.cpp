@@ -238,15 +238,18 @@ public:
 
   Vector &operator=(const Vector &other)
   {
-    delete[] m_arr;
-
-    m_capacity = other.m_capacity;
-    m_size = other.m_size;
-    m_arr = new T[other.m_capacity];
-
-    for (size_t i = 0; i < other.m_size; ++i)
+    if (this != &other)
     {
-      m_arr[i] = other.m_arr[i];
+      delete[] m_arr;
+
+      m_capacity = other.m_capacity;
+      m_size = other.m_size;
+      m_arr = new T[other.m_capacity];
+
+      for (size_t i = 0; i < other.m_size; ++i)
+      {
+        m_arr[i] = other.m_arr[i];
+      }
     }
   }
 
