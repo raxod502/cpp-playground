@@ -265,7 +265,7 @@ public:
     return m_arr[idx];
   }
 
-  T &front()
+  T &front() const
   {
     if (m_size == 0)
     {
@@ -276,7 +276,7 @@ public:
     return m_arr[0];
   }
 
-  T &back()
+  T &back() const
   {
     if (m_size == 0)
     {
