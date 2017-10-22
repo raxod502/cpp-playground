@@ -1,3 +1,6 @@
+#ifndef VECTOR_HPP
+#define VECTOR_HPP
+
 #include <algorithm>
 #include <cstddef>
 #include <iostream>
@@ -430,16 +433,4 @@ public:
   }
 };
 
-int main()
-{
-  Vector<int> v;
-  for (int i = 0; i < 20; ++i)
-  {
-    v.push_back(i);
-  }
-
-  for (int i : v)
-  {
-    std::cout << i << std::endl;
-  }
-}
+#endif
